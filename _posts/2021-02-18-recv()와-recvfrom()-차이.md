@@ -2,14 +2,14 @@ recv()
 
 recv() 함수는 TCP 통신에서 소켓으로부터 데이터를 수신한다.
 {% highlist ruby %}
-int recv(int s, void \*buf, size_t len, int flags);
+int recv(int s, void buf, size_t len, int flags);
 {% endhighlight %}
 
 recvfrom()
 
 recvfrom() 함수는 UDP/IP 통신에서 소켓으로부터 데이터를 수신한다.
 {% highlist ruby %}
-int recvfrom(int s, void \*buf, size_t len, int flags, struct sockaddr \*from, socklen_t \*fromlen);
+int recvfrom(int s, void buf, size_t len, int flags, struct sockaddr from, socklen_t fromlen);
 {% endhighlight %}
 
 recv()와 recvfrom()의 차이점은 address를 지정할 수 있는지 없는지이다.
