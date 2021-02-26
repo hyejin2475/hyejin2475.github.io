@@ -280,3 +280,9 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _foo
+  - scope:
+      path: ""
+      type: foo
+    values:
+      layout: single
