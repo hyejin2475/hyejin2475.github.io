@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Hyejin Park"
-  avatar           : "/assets/images/profile1.png"
+  avatar           : "/assets/images/profile1.PNG"
   bio              : "Server System Engineer"
   location         : "Seoul"
   email            :
