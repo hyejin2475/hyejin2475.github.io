@@ -1,7 +1,7 @@
 ---
 title: 동기와 비동기 & 블락과 논블락
 comments: true
-tags: [socket, network, server]
+tags: [socket, i/o, server]
 ---
 
 ### 블락(block) vs 논블락(non-block)
@@ -14,6 +14,20 @@ tags: [socket, network, server]
 - 동기/비동기는 행위에 대한 이야기이다. (기술적으로 구분 안되고 추상적으로 구분)
 - 인과관계가 있는 별개의 A라는 행위와 B라는 행위가 동시에(혹은 비순차적으로) 실행되고 있다면 비동기라고 한다. 여기서 인과관계란 예를들어 멀티쓰레드와 같은 것을 의미한다.
 - A와 B 행위가 순차적으로 작동한다면 동기라고 한다. 또는 A라는 행위가 별개의 것이 아니라 B라는 행위를 관찰하는 행위라면 이것이 동시에 일어나더라도 동기이다. 예를들어 쓰레드 A와 B가 따로 돌아간다고 하더라도 A가 B에 밀착되어 있다면 동기라고 한다.
+
+### 적용
+- 소켓은 기본적으로 blocking mode로 동작한다.
+- fcnl 함수를 이용하여 file descriptor를 non-blocking 소켓으로 변경할 수 있다.
+{% highlight ruby %}
+#include <unistd.h>
+#include <fctnl.h>
+
+int flag = fcntl(sock_fd, F_GETFL, 0)
+fcntl(sock_fd, F_SETFL, flag | O_NONBLOCK)
+{% endhighlight %}
++ F_GETFL : 파일 상태의 속성을 return 한다
++ F_SETFL : 파일 상태의 속성을 세번째 인수로 받아 설정한다. 
+fd의 속성을 변경할 때는 반드시 먼저 flag를 얻어오고(GET) 얻어온 값을 통해 변경(SET)해야 한다. 그렇지 않으면 이전에 설정했던 값은 지워질 수 있다.
 
 ### 예시
 1. 블럭/동기
