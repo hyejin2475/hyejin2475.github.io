@@ -1,11 +1,22 @@
-recv()
+---
+layout: single
+title: recv()와 recvfrom()의 차이
+categories:
+  - socket
+tags:
+  - socket
+  - i/o
+---
+
+
+### recv()
 
 recv() 함수는 TCP 통신에서 소켓으로부터 데이터를 수신한다.
 {% highlight ruby %}
 int recv(int s, void buf, size_t len, int flags);
 {% endhighlight %}
 
-recvfrom()
+### recvfrom()
 
 recvfrom() 함수는 UDP/IP 통신에서 소켓으로부터 데이터를 수신한다.
 {% highlight ruby %}

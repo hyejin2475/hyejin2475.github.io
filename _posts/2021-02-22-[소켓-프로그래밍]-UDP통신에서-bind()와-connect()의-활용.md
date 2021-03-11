@@ -1,10 +1,18 @@
-UDP 통신에서 bind(), connect() 사용
+---
+layout: single
+title: UDP 통신에서 bind(), connect()
+categories:
+  - socket
+tags:
+  - socket
+  - UDP socket
+---
 
-* bind() 
+### bind() 
 - 소켓통신에서 bind 한다는 것의 의미는 소켓에 ip address와 port를 연결시키겠다는 의미이다
 - 즉, 외부에서 패킷이 들어왔을 때 이 패킷을 어디로 보낼지 정하는 것
 
-* connect()
+### connect()
 - TCP 통신에서 connect()는 2가지 일을 한다 (IP,PORT 할당 / 연결 요청)
 - UDP 통신에서 connect()는 오직 IP와 임의의 PORT를 할당하는 일만 진행한다
 
@@ -21,7 +29,7 @@ TCP 소켓 통신에서는 일반적으로 클라이언트가 아닌 서버에�
 송신측에서 bind를 해주어야 OS가 받은 데이터를 어디로 보낼 지 알 수 있는 것이다.
 connection() 도 마찬가지로 receiver가 아닌 sender에 넣어주니 전송이 되었다.
 
-패킷(데이터)이 어플리케이션(수신기)에 전달되는 프로세스
+### 패킷(데이터)이 어플리케이션(수신기)에 전달되는 프로세스
 1. 랜카드를 통해 패킷 수신
 2. 랜카드 드라이버가 OS에 패킷 전달
 3. OS는 소켓 리스트에서 패킷의 목적지 address와 port번호와 일치하게 bind 되어있는 소켓을 찾음
@@ -31,7 +39,7 @@ connection() 도 마찬가지로 receiver가 아닌 sender에 넣어주니 전�
 UDP 소켓은 명시적, 암시적 두 가지 방법에 의해 Local IP, Port binding을 수행할 수 있다. 
 UDP 소켓이 로컬 ip, port 와 바인딩 되어있지 않다면 recvfrom()을 사용할 수 없다.
 
-결론 : UDP 통신에서는 bind(), connection()을 송신측에서 사용해야 한다.
+*결론 : UDP 통신에서는 bind(), connection()을 송신측에서 사용해야 한다.*
 
 +추가)
 connection() 함수를 sender에 붙인 후 send/recv 함수가 정상적으로 작동헀다.

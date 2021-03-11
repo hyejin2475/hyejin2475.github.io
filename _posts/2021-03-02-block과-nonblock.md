@@ -1,7 +1,11 @@
 ---
+layout: single
 title: 동기와 비동기 & 블락과 논블락
-comments: true
-tags: [socket, i/o, server]
+categories: 
+  - socket
+tags: 
+  - socket
+  - i/o
 ---
 
 ### 블락(block) vs 논블락(non-block)

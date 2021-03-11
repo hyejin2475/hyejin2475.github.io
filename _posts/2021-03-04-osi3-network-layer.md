@@ -1,7 +1,11 @@
 ---
+layout: single
 title: OSI모델 3계층(네트워크계층-스트림, 메세지 형식)
-comments: true
-tags: [OSI 7 layers, network]
+categories:
+  - network
+tags: 
+  - OSI 7 layers
+  - network
 ---
 
 ### 스트림 형식(TCP)
