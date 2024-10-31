@@ -2,10 +2,10 @@
 layout: single
 title: new post
 categories:
-  - socket
+  - web
 tags:
-  - socket
-  - i/o
+  - next.js
+  - typescript
 ---
 
 Hello
